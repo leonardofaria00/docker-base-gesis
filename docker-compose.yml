@@ -12,7 +12,7 @@ services:
       - data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password #Password for database. User are: root
-      - MYSQL_DATABASE=app_development #Databae name
+      - MYSQL_DATABASE=app_development #Database name
     networks:
       - demo-network
 
