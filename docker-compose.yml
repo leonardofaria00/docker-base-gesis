@@ -1,13 +1,36 @@
-version: "3.2"
+version: "3.7"
 
+volumes:
+  data:
 services:
+  db:
+    image: mysql:5.6
+    container_name: mysql_container #Host name
+    ports:
+      - "3306:3306"
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password #Password for database. User are: root
+      - MYSQL_DATABASE=app_development #Databae name
+    networks:
+      - demo-network
+
   webapp:
     build:
       context: .
       dockerfile: ./Dockerfile
     ports:
       - "8080:8080"
+    networks:
+      - demo-network
     volumes:
       - ./app:/var/www/html/
       - "./run_tests.sh:/tmp/run_tests.sh:ro"
+    depends_on:
+      - db
     restart: always
+
+networks:
+  demo-network:
+    driver: bridge
