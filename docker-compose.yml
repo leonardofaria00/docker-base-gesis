@@ -1,0 +1,13 @@
+version: "3.2"
+
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/var/www/html/
+      - "./run_tests.sh:/tmp/run_tests.sh:ro"
+    restart: always
