@@ -2,7 +2,7 @@
 Example PHP-FPM 7.3 & Nginx 1.16 setup for Docker, build on [Alpine Linux](http://www.alpinelinux.org/).
 The image is only +/- 35MB large.
 
-Repository: https://github.com/leonardofaria00/docker-base-gesis
+Repository: https://github.com/leonardofaria00/alpine-nginx-php73
 
 
 * Built on the lightweight and secure Alpine Linux distribution
