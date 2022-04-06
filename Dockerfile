@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.15.4
 
 LABEL Maintainer="Leonardo Faria dos Santos <leonardofaria00@gmail.com>" \
   Description="Lightweight container with Nginx 1.16 & PHP-FPM 7.3 based on Alpine Linux."
